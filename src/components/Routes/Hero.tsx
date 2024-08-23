@@ -55,7 +55,7 @@ const Hero = () => {
                 }}
                 className="relative flex flex-col gap-4 items-center justify-center px-4"
             >
-                <section className='w-full h-screen pt-1 '>
+                <section className='w-full pt-1 '>
                     <div className=' sm:mt-32 mt-24  text-center'>
                         <h3 className='border border-gray-300 px-5 py-1 inline-block rounded-full text-[8px] md:text-sm  '>Elevate your online learnig journey! <span className=' text-blue-500 '>Read more </span></h3>
 
@@ -105,7 +105,7 @@ const Hero = () => {
                                 </div>
                             }
                         </form>
-                        <div className='w-full flex justify-center  my-14'>
+                        <div className='w-full flex justify-center  mt-14 sm:mb-36 mb-24 '>
                           <CardDemo/>
                         </div>
                     </div>
