@@ -43,7 +43,6 @@ const Navbar: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     if(tl.current){
       await tl.current.reversed(!tl.current.reversed());
       setOpen(true)
-
     }
   }
 
