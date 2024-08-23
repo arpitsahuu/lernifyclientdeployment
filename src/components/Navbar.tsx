@@ -39,6 +39,14 @@ const Navbar: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
     }
   };
 
+  const smallSigninoper = async () =>{
+    if(tl.current){
+      await tl.current.reversed(!tl.current.reversed());
+      setOpen(true)
+
+    }
+  }
+
   const { contextSafe } = useGSAP({ scope: container });
 
   useGSAP(() => {
@@ -92,11 +100,14 @@ const Navbar: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
       <div ref={slider} className="  absolute top-0 right-[-100%] w-[100%] h-[100vh] bg-[#ffffff71] backdrop-blur hidden  text-4xl pt-[20vh] px-5 font-semibold z-[99999999999999999999]">
         {/* {userData ? <Link href={"Home"} className="mb-2 link block">Home</Link>: <Link href={"Home"} className="mb-2 link block">Home</Link>} */}
       <button onClick={toggleTimeline} className=" absolute top-[5%] right-[8%] "><IoClose /></button>
-
+        { userData ?
+         <Link href="/profile" className="mb-2  link block">profile</Link>:
+         <button className="px-2 rounded mb-4 py-1 bg-gray-800 text-white " onClick={smallSigninoper}>Signin</button>
+        }
         <Link href={"Home"} className="mb-2 link block">Home</Link>
-        <Link href={"Home"} className="mb-2 link block">Course</Link>
-        <Link href={"Home"} className="mb-2 link block">Que</Link>
-        <Link href={"Home"} className="mb-2 link block">Signin</Link>
+        <Link href="/courses" className="mb-2 link block">Course</Link>
+        <Link href="/questions" className="mb-2 link block">Que</Link>
+        
         
 
 

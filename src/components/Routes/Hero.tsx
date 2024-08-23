@@ -57,7 +57,7 @@ const Hero = () => {
             >
                 <section className='w-full pt-1 '>
                     <div className=' sm:mt-32 mt-24  text-center'>
-                        <h3 className='border border-gray-300 px-5 py-1 inline-block rounded-full text-[8px] md:text-sm  '>Elevate your online learnig journey! <span className=' text-blue-500 '>Read more </span></h3>
+                        <h3 className='border border-gray-300 px-3 sm:px-5 py-1 inline-block rounded-full text-[8px] md:text-sm  '>Elevate your online learnig journey! <span className=' text-blue-500 '>Read more </span></h3>
 
                         <h1 className=' lg:text-[60px] lg:leading-[60px]  my-3 sm:my-6 leading-[5vw] text-[5vw]  sm:text-[4.2vw] font-bold whitespace-pre sm:leading-[4vw] text-gray-800'>Unlock Your Tech Potential <br /> with Courses Designed for Success</h1>
 
