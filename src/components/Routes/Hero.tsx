@@ -59,7 +59,7 @@ const Hero = () => {
                     <div className=' sm:mt-32 mt-24  text-center'>
                         <h3 className='border border-gray-300 px-5 py-1 inline-block rounded-full text-[8px] md:text-sm  '>Elevate your online learnig journey! <span className=' text-blue-500 '>Read more </span></h3>
 
-                        <h1 className=' lg:text-[60px] lg:leading-[60px]  my-3 sm:my-6 leading-[3.5vw] text-[3.5vw]  sm:text-[4.2vw] font-bold whitespace-pre sm:leading-[4vw] text-gray-800'>Unlock Your Tech Potential <br /> with Courses Designed for Success</h1>
+                        <h1 className=' lg:text-[60px] lg:leading-[60px]  my-3 sm:my-6 leading-[5vw] text-[5vw]  sm:text-[4.2vw] font-bold whitespace-pre sm:leading-[4vw] text-gray-800'>Unlock Your Tech Potential <br /> with Courses Designed for Success</h1>
 
                         <h5 className=' text-gray-600  px-2 text-center text-wrap text-[9px] sm:text-sm lg:w-[60%] md:w-[60%] sm:w-[62%]  m-auto'>Join a vibrant community of learners and professionals, dedicated to exploring the latest advancements in tech and development, and unlock new opportunities for personal and professional growth</h5>
 
