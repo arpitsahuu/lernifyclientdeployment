@@ -1,4 +1,5 @@
 import { apiSlice } from "../api/apiSlice";
+import { removeTokens, setTokensWithExpiry } from "../helpers/authhelpers";
 import { userLoggedIn, userLoggedOut, userRegistration } from "./authSlice";
 
 type RegistrationResponse = {
@@ -43,6 +44,8 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
+          const { accessToken, refreshToken } = result.data;
+          setTokensWithExpiry(accessToken, refreshToken, 1, 21);
           dispatch(
             userLoggedIn({
               accessToken: result.data.accessToken,
@@ -67,7 +70,9 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
-          console.log(result.data.user)
+          const { accessToken, refreshToken } = result.data;
+
+          setTokensWithExpiry(accessToken, refreshToken, 1, 21);
           dispatch(
             userLoggedIn({
               accessToken: result.data.accessToken,
@@ -112,6 +117,7 @@ export const authApi = apiSlice.injectEndpoints({
       }),
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
+          removeTokens();
           dispatch(userLoggedOut());
         } catch (error: any) {
           console.log(error);
