@@ -44,7 +44,7 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
-          await setTokensWithExpiry(result.data.accessToken, result.data.refreshToken,1,21);
+          await setTokensWithExpiry(result?.data?.accessToken, result?.data?.refreshToken,1,21);
           dispatch(
             userLoggedIn({
               accessToken: result.data.accessToken,
@@ -69,7 +69,7 @@ export const authApi = apiSlice.injectEndpoints({
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
           const result = await queryFulfilled;
-          await setTokensWithExpiry(result.data.accessToken, result.data.refreshToken,1,21);
+          await setTokensWithExpiry(result?.data?.accessToken, result?.data?.refreshToken,1,21);
           dispatch(
             userLoggedIn({
               accessToken: result.data.accessToken,

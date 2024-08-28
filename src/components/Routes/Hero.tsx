@@ -64,7 +64,7 @@ const Hero = () => {
                         <h5 className=' text-gray-600  px-2 text-center text-wrap text-[9px] sm:text-sm lg:w-[60%] md:w-[60%] sm:w-[62%]  m-auto'>Join a vibrant community of learners and professionals, dedicated to exploring the latest advancements in tech and development, and unlock new opportunities for personal and professional growth</h5>
 
                         <form onSubmit={handleSearch} className=' relative mt-8 w-[90%] sm:w-[700px] m-auto '>
-                            <input type="text" name="serch" className='w-full sm:h-14 h-10 bg-sky-50 rounded-full pe-28  ps-10 sm:ps-16 text-gray-700 text-sm sm:text-lg shadow' placeholder='Search Courses' required onChange={(e) => setSearchTerm(e.target.value)} />
+                            <input type="text" id='search' name="serch" className='w-full sm:h-14 h-10 bg-sky-50 rounded-full pe-28  ps-10 sm:ps-16 text-gray-700 text-sm sm:text-lg shadow' placeholder='Search Courses' required onChange={(e) => setSearchTerm(e.target.value)} />
                             <button
                                 type="submit"
                                 className={`absolute  py-1 px-3 sm:py-2 sm:px-6  rounded-full top-1 right-1 sm:top-2 sm:right-3 text-white  ${isLoading ? "!cursor-no-drop opacity-[0.6] bg-gray-400 text-black" : "bg-[#4080ED]"}`}
