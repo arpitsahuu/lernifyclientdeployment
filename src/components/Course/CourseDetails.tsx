@@ -295,7 +295,7 @@ const CourseDetails = ({
             </div>
           </div>
           <div className="w-full sm:w-[35%] relative">
-            <div className="sticky top-[100px] left-0 z-50 w-full">
+            <div className="sticky top-[100px] left-0 z-30 w-full">
               <CoursePlayer videoUrl={data?.demoUrl} title={data?.title} />
               <div className="flex items-center">
                 <h1 className="pt-5 text-[25px] text-black dark:text-white">

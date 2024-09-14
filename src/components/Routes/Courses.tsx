@@ -16,7 +16,7 @@ const Courses = (props: Props) => {
   return (
     <div>
       <div className={`w-[90%] 800px:w-[80%] m-auto`}>
-        <h1 className="text-center text-[25px] leading-[35px] sm:text-2xl lg:text-3xl dark:text-white 800px:!leading-[60px] text-gray-800 font-[600] ">
+        <h1 className="text-center text-[25px] py-5 leading-[35px] sm:text-2xl lg:text-3xl dark:text-white 800px:!leading-[60px] text-gray-800 font-[600] ">
           Courses
         </h1>
         <br />
@@ -27,7 +27,9 @@ const Courses = (props: Props) => {
               <CourseCard item={item} key={index} />
             ))}
         </div>
-        <Link className=" text-lg" href="courses"> View All</Link>
+        <div className="w-full flex items-center justify-center">
+        <Link className=" text-lg my-5  " href="courses"> View All</Link>
+        </div>
 
       </div>
     </div>

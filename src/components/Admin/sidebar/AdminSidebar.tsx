@@ -108,6 +108,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, role }: Props) => {
         "& .pro-menu-item": {
           color: "#000",
         },
+        zIndex: 100 
       }}
       className="!bg-white dark:bg-[#111C43]"
     >
@@ -335,7 +336,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, role }: Props) => {
             top: "73px",
             left: 0,
             height: "96vh",
-            zIndex: 99999999999999,
+            zIndex: 30,
             width: isCollapsed ? "0%" : "16%",
           }}
         >
