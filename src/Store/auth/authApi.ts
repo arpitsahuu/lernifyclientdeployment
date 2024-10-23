@@ -106,7 +106,7 @@ export const authApi = apiSlice.injectEndpoints({
         }
       },
     }),
-    logOut: builder.mutation<void,void>({
+    logOut: builder.mutation<void, void>({
       query: () => ({
         url: "logout",
         method: "GET",
@@ -114,12 +114,28 @@ export const authApi = apiSlice.injectEndpoints({
       }),
       async onQueryStarted(arg, { queryFulfilled, dispatch }) {
         try {
-          dispatch(userLoggedOut());
+          await queryFulfilled; // Wait for the request to complete
+          dispatch(userLoggedOut()); // Dispatch the logout action after the API call succeeds
         } catch (error: any) {
-          console.log(error);
+          console.error("Logout failed:", error); // Log any errors
         }
       },
     }),
+
+    // logOut: builder.mutation<void,void>({
+    //   query: () => ({
+    //     url: "logout",
+    //     method: "GET",
+    //     credentials: "include" as const,
+    //   }),
+    //   async onQueryStarted(arg, { queryFulfilled, dispatch }) {
+    //     try {
+    //       dispatch(userLoggedOut());
+    //     } catch (error: any) {
+    //       console.log(error);
+    //     }
+    //   },
+    // }),
     sendMail: builder.query({
       query: () => ({
         url: "/resend/email",

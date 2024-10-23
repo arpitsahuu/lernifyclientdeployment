@@ -71,7 +71,7 @@ const Sidebar = ({ isCollapsed, setIsCollapsed, role }: Props) => {
   const logoutHandler = async () => {
     try {
       await logOut();
-      router.push("/");
+      // router.push("/");
     } catch (error) {
       console.error("Failed to log out:", error);
     }

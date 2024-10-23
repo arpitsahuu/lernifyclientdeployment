@@ -13,6 +13,7 @@ import { duration } from "@mui/material";
 import { GiHamburgerMenu } from "react-icons/gi";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useSelector } from "react-redux";
 
 type Props = {
   open: boolean;
@@ -29,6 +30,7 @@ type TimelineType = {
 const Navbar: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
   const linkData: string[] = ["courses", "questions"];
   const { data: userData, isLoading, refetch } = useLoadUserQuery(undefined, {});
+  const { user } = useSelector((state: any) => state.auth);
   const [state, setstate] = useState(true)
   const pathname = usePathname();
   const container = useRef<HTMLDivElement>(null);
@@ -86,10 +88,10 @@ const Navbar: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
               {item}
             </Link>
           ))}
-          {userData ?
+          {user ?
             <Link href="/profile" className="" ><div className="flex content-center items-center px-3 py-[6px] border border-gray-400 rounded-3xl gap-1">
-              <h3 className=" text-sm">{userData?.user?.name}</h3>
-              <img src={userData?.user.avatar?.url} className="h-5 w-5 rounded-full " alt="Ave" />
+              <h3 className=" text-sm">{user?.name}</h3>
+              <img src={user.avatar?.url} className="h-5 w-5 rounded-full " alt="Ave" />
             </div></Link> :
             <button className={` text-lg capitalize ml-32"}`} onClick={() => setOpen(true)}>Signin</button>
           }
@@ -100,7 +102,7 @@ const Navbar: FC<Props> = ({ activeItem, setOpen, route, open, setRoute }) => {
       <div ref={slider} className="  absolute top-0 right-[-100%] w-[100%] h-[100vh] bg-[#ffffff71] backdrop-blur hidden  text-4xl pt-[20vh] px-5 font-semibold z-40">
    
         <button onClick={toggleTimeline} className=" absolute top-[5%] right-[8%] "><IoClose /></button>
-        {userData ?
+        {user?
           <Link href="/profile" className={`mb-2 link block ${(pathname === "/profile" || pathname.includes("profile")) && " underline underline-offset-8"}`}>Profile</Link> :
           <button className="px-2 rounded mb-4 py-1 bg-gray-800 text-white " onClick={smallSigninoper}>Signin</button>
         }
