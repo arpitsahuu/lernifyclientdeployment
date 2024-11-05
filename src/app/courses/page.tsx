@@ -8,7 +8,6 @@ import Header from "../../components/Navbar";
 import Heading from "../../components/utils/Heading";
 import { styles } from "../styles/style";
 import CourseCard from "../../components/Course/CourseCard";
-// import Footer from "../components/Footer";
 
 type Props = {};
 

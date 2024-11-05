@@ -9,9 +9,7 @@ import { useLoadUserQuery } from "../Store/api/apiSlice";
 import { IoClose } from "react-icons/io5";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react"
-import { duration } from "@mui/material";
 import { GiHamburgerMenu } from "react-icons/gi";
-import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useSelector } from "react-redux";
 
