@@ -53,6 +53,13 @@ export const coursesApi = apiSlice.injectEndpoints({
         credentials: "include" as const,
       }),
     }),
+    getCourseAdmin: builder.query({
+      query: (id) => ({
+        url: `/admin/course/${id}`,
+        method: "GET",
+        credentials: "include" as const,
+      }),
+    }),
     addNewQuestion: builder.mutation({
       query: ({ question, courseId, contentId }) => ({
         url: "add-question",
@@ -123,4 +130,5 @@ export const {
   useAddReviewInCourseMutation,
   useAddReplyInReviewMutation,
   useSearchCoursesQuery,
+  useGetCourseAdminQuery,
 } = coursesApi;

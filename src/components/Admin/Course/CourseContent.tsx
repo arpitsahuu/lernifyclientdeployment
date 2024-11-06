@@ -26,6 +26,8 @@ const CourseContent: FC<Props> = ({
     Array(courseContentData.length).fill(false)
   );
 
+  console.log(courseContentData)
+
   const [activeSection, setActiveSection] = useState(1);
 
   const handleSubmit = (e: any) => {
@@ -270,7 +272,7 @@ const CourseContent: FC<Props> = ({
                       />
                       <br />
                     </div>
-                    {item?.links.map((link: any, linkIndex: number) => (
+                    { Array.isArray(item?.links) &&item?.links.map((link: any, linkIndex: number) => (
                       <div className="mb-3 block" key={linkIndex}>
                         <div className="w-full flex items-center justify-between">
                           <label className={styles.label}>

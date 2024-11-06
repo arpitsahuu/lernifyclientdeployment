@@ -5,7 +5,7 @@ import CourseOptions from "./CourseOptions";
 import CourseData from "./CourseData";
 import CourseContent from "./CourseContent";
 import CoursePreview from "./CoursePreview";
-import { useEditCourseMutation, useGetAllCoursesQuery } from "../../../Store/courses/coursesApi";
+import { useEditCourseMutation, useGetAllCoursesQuery, useGetCourseAdminQuery } from "../../../Store/courses/coursesApi";
 import { toast } from "react-hot-toast";
 import { redirect } from "next/navigation";
 
@@ -15,13 +15,13 @@ type Props = {
 
 const EditCourse:FC<Props> = ({id}) => {
     const [editCourse,{isSuccess,error}] = useEditCourseMutation();
-    const { data, refetch } = useGetAllCoursesQuery(
-        {},
+    const { data, refetch } = useGetCourseAdminQuery(
+        id,
         { refetchOnMountOrArgChange: true }
       );
     
-      const editCourseData = data && data.courses.find((i:any) => i._id === id);
-      
+      // const editCourseData = data && data.courses.find((i:any) => i._id === id);
+      const editCourseData = data && data?.course;
   useEffect(() => {
     if (isSuccess) {
       toast.success("Course Updated successfully");
@@ -52,6 +52,7 @@ const EditCourse:FC<Props> = ({id}) => {
         thumbnail: editCourseData?.thumbnail?.url,
       })
       setBenefits(editCourseData.benefits);
+      console.log(editCourseData.courseData)
       setPrerequisites(editCourseData.prerequisites);
       setCourseContentData(editCourseData.courseData);
     }
